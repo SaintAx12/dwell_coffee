@@ -1,0 +1,199 @@
+:root {
+  --espresso: #231712;
+  --roast: #3b251b;
+  --caramel: #c67d3b;
+  --caramel-hover: #ad682b;
+  --crema: #f7f3ee;
+  --latte: #efe7dd;
+  --milk: #ffffff;
+  --ink: #241b17;
+  --muted: #6f625b;
+  --border: #e4d9ce;
+  --matcha: #2d6a4f;
+  --matcha-bg: #e6f4ec;
+  --amber: #b45309;
+  --amber-bg: #fef3c7;
+  --berry: #b9382c;
+  --berry-bg: #fdecea;
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(35, 23, 18, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background: var(--crema);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--espresso);
+  margin-top: 0;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.card {
+  background: var(--milk);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.sub-box {
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--crema);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* Inputs & Selects */
+input, select {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid #d5c7b9;
+  border-radius: 10px;
+  background: var(--milk);
+  color: var(--ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--caramel);
+  box-shadow: 0 0 0 3px rgba(198, 125, 59, 0.18);
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--milk);
+  color: var(--espresso);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+button:hover {
+  background: var(--latte);
+}
+
+.btn-primary {
+  background: var(--espresso);
+  color: #fff;
+  border-color: var(--espresso);
+}
+
+.btn-primary:hover {
+  background: var(--roast);
+}
+
+.btn-accent {
+  background: var(--caramel);
+  color: #fff;
+  border-color: var(--caramel);
+}
+
+.btn-accent:hover {
+  background: var(--caramel-hover);
+}
+
+.btn-danger {
+  background: var(--berry-bg);
+  color: var(--berry);
+  border-color: #f5c6c2;
+}
+
+.btn-danger:hover {
+  background: #fadbd8;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding: 10px 8px;
+  border-bottom: 2px solid var(--border);
+  text-align: left;
+}
+
+td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #f0e8e0;
+  font-size: 14px;
+}
+
+/* Status Pills */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pill-ok {
+  background: var(--matcha-bg);
+  color: var(--matcha);
+}
+
+.pill-warn {
+  background: var(--amber-bg);
+  color: var(--amber);
+}
+
+.pill-err {
+  background: var(--berry-bg);
+  color: var(--berry);
+}
+
+.row-gap {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Print Styles (FR-07 Receipt & FR-22 Equipment Register) */
+@media print {
+  .topbar, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .card {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+}
